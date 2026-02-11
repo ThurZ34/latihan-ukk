@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('id_aspirasi');
             $table->integer('nis');
             $table->foreign('nis')->references('nis')->on('siswas')->onDelete('cascade');
-            $table->foreignId('id_kategori')->constrained('kategoris')->onDelete('cascade');
+            $table->unsignedBigInteger('id_kategori')->constrained('kategoris')->onDelete('cascade');
             $table->string('lokasi', 50);
             $table->string('ket', 100);
             $table->string('foto', 255);

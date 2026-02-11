@@ -12,7 +12,7 @@ Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware([\Illuminate\Auth\Middleware\Authenticate::class])->group(function () {
     Route::get('/dashboard', [AspirasiController::class, 'dashboard'])->name('dashboard');
     Route::put('/aspirasi/{id}/status', [AspirasiController::class, 'updateStatus'])->name('aspirasi.updateStatus');
 });

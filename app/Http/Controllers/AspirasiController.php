@@ -20,7 +20,7 @@ class AspirasiController extends Controller
                           ->orWhere('nis', 'like', "%{$search}%");
                     });
             })
-            ->when($request->status, function ($query, $status) { // Filter by status for dashboard
+            ->when($request->status, function ($query, $status) { 
                 if ($status !== 'semua') {
                     $query->where('status', $status);
                 }
@@ -90,7 +90,7 @@ class AspirasiController extends Controller
             'id_kategori' => 'required|exists:kategoris,id_kategori',
             'lokasi' => 'required|string|max:50',
             'ket' => 'required|string|max:100',
-            'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         if ($request->hasFile('foto')) {
