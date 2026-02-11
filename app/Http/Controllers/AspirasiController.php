@@ -90,14 +90,14 @@ class AspirasiController extends Controller
             'id_kategori' => 'required|exists:kategoris,id_kategori',
             'lokasi' => 'required|string|max:50',
             'ket' => 'required|string|max:100',
-            'foto' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         if ($request->hasFile('foto')) {
             $validated['foto'] = $request->file('foto')->store('aspirasi', 'public');
         }
 
-        $validated['status'] = 'menunggu';
+        $validated['status'] = 'Menunggu';
         $validated['feedback'] = '';
 
         Aspirasi::create($validated);

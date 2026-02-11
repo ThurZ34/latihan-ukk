@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('lokasi', 50);
             $table->string('ket', 100);
             $table->string('foto', 255);
-            $table->enum('status', ['menunggu', 'diproses', 'selesai'])->default('menunggu');
+            $table->enum('status', ['Menunggu', 'Diproses', 'Selesai'])->default('Menunggu');
             $table->string('feedback', 255);
             $table->timestamps();
         });
