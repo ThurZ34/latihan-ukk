@@ -1,9 +1,9 @@
 import { Head } from "@inertiajs/react";
 
-export default function Welcome() {
+export default function Aspirasi() {
     return (
         <>
-            <Head title="Welcome" />
+            <Head title="Aspirasi - Aspirasi Siswa" />
             <div className="flex justify-center items-center h-screen bg-gray-100 dark:bg-gray-900">
                 <div className="text-center p-8 bg-white dark:bg-gray-800 rounded shadow-xl">
                     <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
